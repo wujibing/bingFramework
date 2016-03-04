@@ -38,7 +38,7 @@ class DependencyInjection
      * @param string $id
      * @return mixed
      */
-    public function get($id)
+    public function get($id,$parameters=null)
     {
         $server = $this->getService($id);
         if($server['share'] && $server['instance'])
@@ -49,8 +49,12 @@ class DependencyInjection
             return $this->createInstance($id);
         }
     }
+    public function createInstance()
+    {
+        
+    }
     /**
-     * 
+     * ªÒ»°
      * @param string $id
      * @return mixed
      */
